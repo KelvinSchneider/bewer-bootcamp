@@ -7,6 +7,7 @@ import { Header } from "@/components/common/header";
 import ProductList from "@/components/common/product-list";
 import { db } from "@/db";
 import { productTable } from "@/db/schema";
+import BrandList from "@/components/common/brand-list";
 
 const Home = async () => {
   const products = await db.query.productTable.findMany({
@@ -36,6 +37,8 @@ const Home = async () => {
             className="h-auto w-full"
           />
         </div>
+
+        <BrandList title="Marcas parceiras" />
 
         <ProductList products={products} title="Mais vendidos" />
 
