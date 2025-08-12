@@ -81,23 +81,34 @@ const SignUpForm = () => {
 
   return (
     <>
-      <Card className="w-full">
-        <CardHeader>
-          <CardTitle>Criar conta</CardTitle>
-          <CardDescription>Crie uma conta para continuar.</CardDescription>
+      <Card className="w-full md:max-w-md lg:max-w-lg mx-auto">
+        <CardHeader className="md:p-6 lg:p-8">
+          <CardTitle className="md:text-xl lg:text-2xl">Criar conta</CardTitle>
+          <CardDescription className="md:text-base lg:text-lg">
+            Crie uma conta para continuar.
+          </CardDescription>
         </CardHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <CardContent className="grid w-full gap-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 md:space-y-10"
+          >
+            <CardContent className="grid w-full gap-6 md:gap-8 p-6 md:p-6 lg:p-8">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nome</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Nome
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite seu nome" {...field} />
+                      <Input
+                        placeholder="Digite seu nome"
+                        {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -108,9 +119,15 @@ const SignUpForm = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Email
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite seu email" {...field} />
+                      <Input
+                        placeholder="Digite seu email"
+                        {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -121,12 +138,15 @@ const SignUpForm = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Senha</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Senha
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Digite sua senha"
                         type="password"
                         {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
                       />
                     </FormControl>
                     <FormMessage />
@@ -138,12 +158,15 @@ const SignUpForm = () => {
                 name="passwordConfirmation"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Confirmar senha</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Confirmar senha
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Digite a sua senha novamente"
                         type="password"
                         {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
                       />
                     </FormControl>
                     <FormMessage />
@@ -151,8 +174,13 @@ const SignUpForm = () => {
                 )}
               />
             </CardContent>
-            <CardFooter>
-              <Button type="submit">Criar conta</Button>
+            <CardFooter className="p-6 md:p-6 lg:p-8">
+              <Button
+                type="submit"
+                className="w-full md:h-12 lg:h-14 md:text-base lg:text-lg"
+              >
+                Criar conta
+              </Button>
             </CardFooter>
           </form>
         </Form>

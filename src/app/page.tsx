@@ -26,15 +26,15 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="space-y-6">
-        <div className="px-5">
+      <div className="space-y-6 md:space-y-8 lg:space-y-10">
+        <div className="px-5 md:px-6 lg:px-8">
           <Image
             src="/banner-01.png"
             alt="Leve uma vida com estilo"
             height={0}
             width={0}
             sizes="100vw"
-            className="h-auto w-full"
+            className="h-auto w-full rounded-3xl md:rounded-[2rem] lg:rounded-[2.5rem]"
           />
         </div>
 
@@ -42,18 +42,18 @@ const Home = async () => {
 
         <ProductList products={products} title="Mais vendidos" />
 
-        <div className="px-5">
+        <div className="px-5 md:px-6 lg:px-8">
           <CategorySelector categories={categories} />
         </div>
 
-        <div className="px-5">
+        <div className="px-5 md:px-6 lg:px-8">
           <Image
             src="/banner-02.png"
             alt="Leve uma vida com estilo"
             height={0}
             width={0}
             sizes="100vw"
-            className="h-auto w-full"
+            className="h-auto w-full rounded-3xl md:rounded-[2rem] lg:rounded-[2.5rem]"
           />
         </div>
 

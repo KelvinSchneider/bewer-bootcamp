@@ -80,23 +80,34 @@ const SignInForm = () => {
   };
   return (
     <>
-      <Card className="w-full">
-        <CardHeader>
-          <CardTitle>Entrar</CardTitle>
-          <CardDescription>Faça login para continuar.</CardDescription>
+      <Card className="w-full md:max-w-md lg:max-w-lg mx-auto">
+        <CardHeader className="md:p-6 lg:p-8">
+          <CardTitle className="md:text-xl lg:text-2xl">Entrar</CardTitle>
+          <CardDescription className="md:text-base lg:text-lg">
+            Faça login para continuar.
+          </CardDescription>
         </CardHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <CardContent className="grid gap-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 md:space-y-10"
+          >
+            <CardContent className="grid gap-6 md:gap-8 p-6 md:p-6 lg:p-8">
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Email
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite seu email" {...field} />
+                      <Input
+                        placeholder="Digite seu email"
+                        {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -107,12 +118,15 @@ const SignInForm = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Senha</FormLabel>
+                    <FormLabel className="md:text-base lg:text-lg">
+                      Senha
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Digite sua senha"
                         type="password"
                         {...field}
+                        className="md:h-12 lg:h-14 md:text-base lg:text-lg"
                       />
                     </FormControl>
                     <FormMessage />
@@ -120,17 +134,23 @@ const SignInForm = () => {
                 )}
               />
             </CardContent>
-            <CardFooter className="flex flex-col gap-2">
-              <Button type="submit" className="w-full">
+            <CardFooter className="flex flex-col gap-2 md:gap-3 p-6 md:p-6 lg:p-8">
+              <Button
+                type="submit"
+                className="w-full md:h-12 lg:h-14 md:text-base lg:text-lg"
+              >
                 Entrar
               </Button>
               <Button
                 variant="outline"
-                className="w-full"
+                className="w-full md:h-12 lg:h-14 md:text-base lg:text-lg"
                 onClick={handleSignInWithGoogle}
                 type="button"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6"
+                >
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
                     fill="#4285F4"
